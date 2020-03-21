@@ -1,0 +1,108 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>                               
+#include <stdlib.h>
+#include <string.h>
+
+#define TAMANHO 15
+
+// so o que temos: a musica e a lista 
+struct musica
+{
+    char    Faixa[TAMANHO];
+    char    Artista[TAMANHO];
+    int     min;
+    int     seg;
+};  // musica
+typedef struct musica Musica;
+
+struct no
+{
+    void* dados;
+    struct no* proxima;
+};  // no
+typedef struct no Lista;
+
+
+int show();
+
+// as funcoes do menu
+void m_apagar();
+void m_excluir();
+void m_incluir();
+void m_mostrar();
+void m_salvar();
+void m_somar();
+void m_trocar();
+
+int main(int argc, char** argv)
+{
+    char c = 0;
+    do
+    {
+        c = show();
+        switch (c)
+        {
+        case '0':
+            return 0;
+        case '1':
+            m_incluir();
+        case '2':
+            m_excluir();
+            break;
+        case '3':
+            m_mostrar();
+            break;
+        case '4':
+            m_apagar();
+            break;
+        case '5':
+            m_salvar();
+            break;
+        case '6':
+            m_somar();
+            break;
+        case '7':
+            m_trocar();
+            break;
+        default:
+            break;
+        };  // switch()
+    } while (c != 'q'); // while()
+    return 0;
+};  // main()
+
+
+int show()
+{
+    // temos pressa entao o menu vem de menu.txt e vai para tela
+    const char* arq_entrada = "menu.txt";
+    char linha[71];
+    char* lido = NULL;
+    char opt = 0;
+    FILE* entrada;
+    entrada = fopen(arq_entrada, "r");
+    if (entrada == NULL)
+    {
+        printf("Erro tentando abrir menu '%s'\n", arq_entrada);
+        return 'q';
+    };  // if()
+    // agora le os caras e poe na tela
+    do
+    {
+        lido = fgets(linha, 70, entrada);
+        if (lido != NULL)printf("%s", linha);
+    } while (lido != NULL);
+    fclose(entrada);
+    printf("Sua Opcao:_");
+    opt = getc(stdin);
+    return opt;
+};  // show()
+
+void m_apagar() {};
+void m_excluir() {};
+void m_incluir() {};
+void m_mostrar() {};
+void m_salvar() {};
+void m_somar() {};
+void m_trocar() {};

@@ -1,0 +1,13 @@
+
+1 - Incluir faixa
+2 - Excluir faixa
+3 - Mostrar PlayList
+4 - Apagar PlayList
+5 - Salvar PlayList em arquivo
+6 - Acrescentar Musicas a partir do arquivo (+)
+7 - Substituir playlist pelo conteudo do arquivo
+x - inventa +10 musicas
+
+0 - Encerrar
+
+
