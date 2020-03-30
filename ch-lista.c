@@ -61,6 +61,9 @@ void		pause();
 int main(int argc, char** argv)
 {
     int nMusicas = 0;
+    int num1;
+    int num2;
+    char cc;
     fabrica(0);
     Lista* playlist = NULL;
     char c = 0;

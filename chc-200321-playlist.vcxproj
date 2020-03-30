@@ -27,6 +27,9 @@
     <Text Include="menu.txt" />
     <Text Include="saida.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cls.bat" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{365C7DB2-C0E1-4C95-9D98-D208982F1F2A}</ProjectGuid>
